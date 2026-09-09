@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v11.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v11.0": {
+      "The25th_WEB/1.0.0": {
+        "runtime": {
+          "The25th_WEB.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "The25th_WEB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
