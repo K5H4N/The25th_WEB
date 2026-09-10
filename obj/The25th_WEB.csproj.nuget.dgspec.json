@@ -45,6 +45,24 @@
         "net11.0": {
           "framework": "net11.0",
           "targetAlias": "net11.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[11.0.0-rc.1.26425.128, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[11.0.0-rc.1.26425.128, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[11.0.0-rc.1.26425.128, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
