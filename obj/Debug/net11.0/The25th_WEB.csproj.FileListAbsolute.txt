@@ -23,7 +23,6 @@
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/scopedcss/bundle/The25th_WEB.styles.css
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/scopedcss/projectbundle/The25th_WEB.bundle.scp.css
-/Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/r48u1ihfm6-{0}-p7jex226bq-p7jex226bq.gz
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/xmek4id1cq-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/vm3i0ka8rk-{0}-fr7q2aak1r-fr7q2aak1r.gz
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/mbg7r5vjz0-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -220,3 +219,4 @@
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/r48u1ihfm6-{0}-i5eagf8fab-i5eagf8fab.gz

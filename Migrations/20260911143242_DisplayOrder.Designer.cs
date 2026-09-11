@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using The25th_WEB.Data;
 
@@ -10,14 +11,11 @@ using The25th_WEB.Data;
 namespace The25th_WEB.Migrations;
 
 [DbContext(typeof(ApplicationDbContext))]
-partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+[Migration("20260911143242_DisplayOrder")]
+partial class _20260911143242_DisplayOrder
 {
-    // If you encounter a merge conflict in the line below, it means you need to
-    // discard one of the migration branches and recreate its migrations on top of
-    // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20260911143734_AddDisplayOrderToSeedData";
-
-    protected override void BuildModel(ModelBuilder modelBuilder)
+    /// <inheritdoc />
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
 #pragma warning disable 612, 618
         modelBuilder
@@ -49,19 +47,19 @@ partial class ApplicationDbContextModelSnapshot : ModelSnapshot
                     new
                     {
                         Id = 1,
-                        DisplayOrder = 1,
+                        DisplayOrder = 0,
                         Name = "Sci-Fi"
                     },
                     new
                     {
                         Id = 2,
-                        DisplayOrder = 2,
+                        DisplayOrder = 0,
                         Name = "Fantasy"
                     },
                     new
                     {
                         Id = 3,
-                        DisplayOrder = 3,
+                        DisplayOrder = 0,
                         Name = "Mystery"
                     });
             });

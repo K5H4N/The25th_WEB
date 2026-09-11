@@ -15,9 +15,9 @@ namespace The25th_WEB.Data
             //base.OnModelCreating(modelBuilder);
            
            modelBuilder.Entity<Category>().HasData(
-                new Category { Id = 1, Name = "Sci-Fi" },
-                new Category { Id = 2, Name = "Fantasy" },
-                new Category { Id = 3, Name = "Mystery" }
+                new Category { Id = 1, Name = "Sci-Fi", DisplayOrder = 1 },
+                new Category { Id = 2, Name = "Fantasy", DisplayOrder = 2 },
+                new Category { Id = 3, Name = "Mystery", DisplayOrder = 3 }
             );
         }
     }
