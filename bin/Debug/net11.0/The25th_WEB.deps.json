@@ -10,7 +10,9 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "11.0.0-rc.1.26425.128",
           "Microsoft.EntityFrameworkCore.SqlServer": "11.0.0-rc.1.26425.128",
-          "Microsoft.EntityFrameworkCore.Tools": "11.0.0-rc.1.26425.128"
+          "Microsoft.EntityFrameworkCore.Tools": "11.0.0-rc.1.26425.128",
+          "The25th.Business": "1.0.0",
+          "The25th.DataAccess": "1.0.0"
         },
         "runtime": {
           "The25th_WEB.dll": {}
@@ -807,6 +809,48 @@
             "localPath": "System.Security.Cryptography.ProtectedData.dll"
           }
         }
+      },
+      "The25th.Business/1.0.0": {
+        "dependencies": {
+          "The25th.DataAccess": "1.0.0",
+          "The25th.Models": "1.0.0",
+          "The25th.Utility": "1.0.0"
+        },
+        "runtime": {
+          "The25th.Business.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "The25th.DataAccess/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "11.0.0-rc.1.26425.128",
+          "The25th.Models": "1.0.0",
+          "The25th.Utility": "1.0.0"
+        },
+        "runtime": {
+          "The25th.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "The25th.Models/1.0.0": {
+        "runtime": {
+          "The25th.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "The25th.Utility/1.0.0": {
+        "runtime": {
+          "The25th.Utility.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1081,6 +1125,26 @@
       "sha512": "sha512-t8S9IDpjJKsLpLkeBdW8cWtcPyYqrGu93Dej1RO6WwuL/lkFSqWlan3rMJfortqz1mRIh+sys2AFsSA6jWJ3Jg==",
       "path": "system.security.cryptography.protecteddata/9.0.13",
       "hashPath": "system.security.cryptography.protecteddata.9.0.13.nupkg.sha512"
+    },
+    "The25th.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "The25th.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "The25th.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "The25th.Utility/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

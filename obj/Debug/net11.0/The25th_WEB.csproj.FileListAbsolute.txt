@@ -220,3 +220,11 @@
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/r48u1ihfm6-{0}-i5eagf8fab-i5eagf8fab.gz
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Business.dll
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.DataAccess.dll
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Models.dll
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Utility.dll
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Business.pdb
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.DataAccess.pdb
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Models.pdb
+/Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Utility.pdb

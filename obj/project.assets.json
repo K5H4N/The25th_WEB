@@ -911,6 +911,56 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "The25th.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v11.0",
+        "dependencies": {
+          "The25th.DataAccess": "1.0.0",
+          "The25th.Models": "1.0.0",
+          "The25th.Utility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/The25th.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/The25th.Business.dll": {}
+        }
+      },
+      "The25th.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v11.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.12",
+          "The25th.Models": "1.0.0",
+          "The25th.Utility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/The25th.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/The25th.DataAccess.dll": {}
+        }
+      },
+      "The25th.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v11.0",
+        "compile": {
+          "bin/placeholder/The25th.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/The25th.Models.dll": {}
+        }
+      },
+      "The25th.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v11.0",
+        "compile": {
+          "bin/placeholder/The25th.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/The25th.Utility.dll": {}
+        }
       }
     }
   },
@@ -2245,13 +2295,35 @@
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "The25th.Business/1.0.0": {
+      "type": "project",
+      "path": "../The25th.Business/The25th.Business.csproj",
+      "msbuildProject": "../The25th.Business/The25th.Business.csproj"
+    },
+    "The25th.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../The25th.DataAccess/The25th.DataAccess.csproj",
+      "msbuildProject": "../The25th.DataAccess/The25th.DataAccess.csproj"
+    },
+    "The25th.Models/1.0.0": {
+      "type": "project",
+      "path": "../The25th.Models/The25th.Models.csproj",
+      "msbuildProject": "../The25th.Models/The25th.Models.csproj"
+    },
+    "The25th.Utility/1.0.0": {
+      "type": "project",
+      "path": "../The25th.Utility/The25th.Utility.csproj",
+      "msbuildProject": "../The25th.Utility/The25th.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net11.0": [
       "Microsoft.EntityFrameworkCore.Design >= 11.0.0-rc.1.26425.128",
       "Microsoft.EntityFrameworkCore.SqlServer >= 11.0.0-rc.1.26425.128",
-      "Microsoft.EntityFrameworkCore.Tools >= 11.0.0-rc.1.26425.128"
+      "Microsoft.EntityFrameworkCore.Tools >= 11.0.0-rc.1.26425.128",
+      "The25th.Business >= 1.0.0",
+      "The25th.DataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2279,7 +2351,14 @@
         "net11.0": {
           "framework": "net11.0",
           "targetAlias": "net11.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/HAN/C# .NET/The25th.Business/The25th.Business.csproj": {
+              "projectPath": "/Users/HAN/C# .NET/The25th.Business/The25th.Business.csproj"
+            },
+            "/Users/HAN/C# .NET/The25th.DataAccess/The25th.DataAccess.csproj": {
+              "projectPath": "/Users/HAN/C# .NET/The25th.DataAccess/The25th.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using The25th.Business.IServices;
+using The25th.Business.Services;
 using The25th_WEB.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection"));
 });
-
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

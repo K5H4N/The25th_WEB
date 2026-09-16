@@ -18,4 +18,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../The25th.Business/The25th.Business.csproj" />
+    <ProjectReference Include="../The25th.DataAccess/The25th.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
