@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("The25th_WEB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+125734f2d3628e5e98b8701fc1f747c2ffa9815e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58f626f1df7a85e04e8eeecea415c83aac03ea91")]
 [assembly: System.Reflection.AssemblyProductAttribute("The25th_WEB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("The25th_WEB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,7 +12,7 @@ namespace The25th_WEB.Controllers
         {
             _categoryService = categoryService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index() 
         {
             var categories = await _categoryService.GetAllCategoriesAsync();
             return View(categories);
@@ -28,7 +28,7 @@ namespace The25th_WEB.Controllers
         [ActionName("Create")]
         public async Task<IActionResult> CreatePost(Category category)
         {
-            if (!String.IsNullOrEmpty(category.Name) && await _categoryService.IsCategoryNameUniqueAsync(category.Name))
+            if (!String.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name))
                 {
                     ModelState.AddModelError("Name", "A category with the same name already exists.");
                 }
@@ -62,7 +62,7 @@ namespace The25th_WEB.Controllers
         public async Task<IActionResult> UpdatePost(Category category)
         {
             if (!String.IsNullOrEmpty(category.Name) &&
-                await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
+                !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
                 {
                     ModelState.AddModelError("Name", "A category with the same name already exists.");
                 }
@@ -94,9 +94,9 @@ namespace The25th_WEB.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
-        public IActionResult DeletePost(int id)
+        public async Task<IActionResult> DeletePost(int id)
         {
-            _categoryService.DeleteCategoryAsync(id);
+            await _categoryService.DeleteCategoryAsync(id);
             TempData["success"] = "Category deleted successfully!";
             return RedirectToAction("Index");
         }   
