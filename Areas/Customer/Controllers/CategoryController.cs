@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using The25th.Models;
 using The25th.Business.IServices;
 
-namespace The25th_WEB.Controllers
+namespace The25th_WEB.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
@@ -12,7 +13,7 @@ namespace The25th_WEB.Controllers
         {
             _categoryService = categoryService;
         }
-        public async Task<IActionResult> Index() 
+        public async Task<IActionResult> Index()
         {
             var categories = await _categoryService.GetAllCategoriesAsync();
             return View(categories);
@@ -29,9 +30,9 @@ namespace The25th_WEB.Controllers
         public async Task<IActionResult> CreatePost(Category category)
         {
             if (!String.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name))
-                {
-                    ModelState.AddModelError("Name", "A category with the same name already exists.");
-                }
+            {
+                ModelState.AddModelError("Name", "A category with the same name already exists.");
+            }
             if (ModelState.IsValid)
             {
                 await _categoryService.CreateCategoryAsync(category);
@@ -63,9 +64,9 @@ namespace The25th_WEB.Controllers
         {
             if (!String.IsNullOrEmpty(category.Name) &&
                 !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
-                {
-                    ModelState.AddModelError("Name", "A category with the same name already exists.");
-                }
+            {
+                ModelState.AddModelError("Name", "A category with the same name already exists.");
+            }
             if (ModelState.IsValid)
             {
                 await _categoryService.UpdateCategoryAsync(category);
@@ -99,6 +100,6 @@ namespace The25th_WEB.Controllers
             await _categoryService.DeleteCategoryAsync(id);
             TempData["success"] = "Category deleted successfully!";
             return RedirectToAction("Index");
-        }   
+        }
     }
-} 
+}

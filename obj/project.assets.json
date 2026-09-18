@@ -950,7 +950,10 @@
         },
         "runtime": {
           "bin/placeholder/The25th.Models.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "The25th.Utility/1.0.0": {
         "type": "project",
