@@ -228,3 +228,4 @@
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.DataAccess.pdb
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Models.pdb
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Utility.pdb
+/Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/0y7wp919ue-{0}-7r31smthdr-7r31smthdr.gz

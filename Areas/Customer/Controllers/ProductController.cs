@@ -2,6 +2,8 @@ using The25th_WEB.Data;
 using Microsoft.AspNetCore.Mvc;
 using The25th.Models;
 using The25th.Business.IServices;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using The25th.Models.ViewModels;
 
 namespace The25th_WEB.Areas.Customer.Controllers
 {
@@ -9,60 +11,41 @@ namespace The25th_WEB.Areas.Customer.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
-        public ProductController(IProductService productService)
+        private readonly ICategoryService _categoryService;
+        public ProductController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
         public async Task<IActionResult> Index()
-        {
-            var products = await _productService.GetAllProductsAsync();
-            return View(products);
-        }
-
-        public async Task<IActionResult> Create()
         {
             return View();
         }
 
+        public async Task<IActionResult> Upsert()
+        {
+            var categories = await _categoryService.GetAllCategoriesAsync();
+            ProductVM productVM = new()
+            {
+                CategoryList = categories.Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+                }),
+                Product = new Product()
+            };
+            return View(productVM);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ActionName("Create")]
-        public async Task<IActionResult> CreatePost(Product product)
+        [ActionName("Upsert")]
+        public async Task<IActionResult> UpsertPost(Product product)
         {
             if (ModelState.IsValid)
             {
                 await _productService.CreateProductAsync(product);
                 TempData["success"] = "Product created successfully!";
-                return RedirectToAction("Index");
-            }
-            return View();
-        }
-        public async Task<IActionResult> Update(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-
-            var product = await _productService.GetProductByIdAsync(id.Value);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [ActionName("Update")]
-        public async Task<IActionResult> UpdatePost(Product product)
-        {
-
-            if (ModelState.IsValid)
-            {
-                await _productService.UpdateProductAsync(product);
-                TempData["success"] = "Product updated successfully!";
                 return RedirectToAction("Index");
             }
             return View();
@@ -93,5 +76,15 @@ namespace The25th_WEB.Areas.Customer.Controllers
             TempData["success"] = "Product deleted successfully!";
             return RedirectToAction("Index");
         }
+
+
+        #region API CALLS
+        public async Task<IActionResult> GetAll()
+        {
+            var products = await _productService.GetAllProductsAsync(true);
+            return Json(new { data = products });
+        }
+
+        #endregion
     }
 }

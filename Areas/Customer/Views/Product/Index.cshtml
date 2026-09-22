@@ -1,5 +1,4 @@
 @using The25th.Models
-@model List<Product>
 
 <div class="container-fluid py-4">
 
@@ -10,35 +9,29 @@
                 <h5 class="mb-0 fw-bold"><i class="bi bi-grid me-2"></i>Products</h5>
                 <p class="mb-0 small" style="color: #1DB954;">Manage your product products</p>
             </div>
-            <a asp-controller="Product" asp-action="Create"
+            <a asp-controller="Product" asp-action="Upsert"
                class="btn btn-sm btn-outline-light fw-semibold d-inline-flex align-items-center gap-1">
                 <i class="bi bi-plus-lg"></i> New Product
             </a>
         </div>
         <div class="table-responsive">
-            <table class="table-styled">
+            <table id="tblData" class="table-styled">
                 <thead>
                     <tr>
-                        <th>Product Name</th>
+                        <th>Title</th>
+                        <th>ISBN</th>
+                        <th>Price</th>
+                        <th>Author</th>
+                        <th>Category</th>
                         <th class="text-end">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Sample Row - Students will replace with @@foreach loop -->
-                    @foreach (var obj in Model)
-                    {
-                        <tr>
-                            <td class="fw-medium" style="color: #1e293b;">@obj.Title</td>
-                            <td class="text-end">
-                                <a asp-action="Update" asp-route-id="@obj.Id" class="btn btn-sm btn-outline-success me-1"><i
-                                    class="bi bi-pencil-square me-1"></i>Edit</a>
-                                    <a asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-sm btn-outline-danger"><i
-                                        class="bi bi-trash me-1"></i>Delete</a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            </table>
         </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/products.js" asp-append-version="true"></script>
+}
+                        
