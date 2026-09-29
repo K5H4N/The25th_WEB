@@ -11,18 +11,20 @@ namespace The25th_WEB.Areas.Customer.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ICategoryService _categoryService;
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService, ICategoryService categoryService, IWebHostEnvironment webHostEnvironment)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
             return View();
         }
 
-        public async Task<IActionResult> Upsert()
+        public async Task<IActionResult> Upsert(int? id)
         {
             var categories = await _categoryService.GetAllCategoriesAsync();
             ProductVM productVM = new()
@@ -34,17 +36,54 @@ namespace The25th_WEB.Areas.Customer.Controllers
                 }),
                 Product = new Product()
             };
-            return View(productVM);
+            if (id == null || id == 0)
+            {
+                return View(productVM);
+            }
+            else
+            {
+                productVM.Product = await _productService.GetProductByIdAsync(id.Value);
+                return View(productVM);
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Upsert")]
-        public async Task<IActionResult> UpsertPost(Product product, IFormFile? file)
+        public async Task<IActionResult> UpsertPost(ProductVM productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                await _productService.CreateProductAsync(product);
+
+                string wwwRootPatch = _webHostEnvironment.WebRootPath;
+
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine("images", "products");
+                    string finalPath = Path.Combine(wwwRootPatch, productPath);
+
+                    if (!Directory.Exists(finalPath))
+                        Directory.CreateDirectory(finalPath);
+
+                    // save new Image
+                    using (var fileStream = new FileStream(Path.Combine(finalPath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    productVM.Product.ImageUrl = Path.Combine(@"/", productPath, fileName).Replace("\\", "/");
+                }
+
+                if (productVM.Product.Id == null || productVM.Product.Id == 0)
+                {
+                    await _productService.CreateProductAsync(productVM.Product);
+                }
+                else
+                {
+                    await _productService.UpdateProductAsync(productVM.Product);
+                }
+
+
                 TempData["success"] = "Product created successfully!";
                 return RedirectToAction("Index");
             }
@@ -52,7 +91,7 @@ namespace The25th_WEB.Areas.Customer.Controllers
             {
                 var categories = await _categoryService.GetAllCategoriesAsync();
 
-                ProductVM productVM = new()
+                productVM = new()
                 {
                     CategoryList = categories.Select(c => new SelectListItem
                     {
