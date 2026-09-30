@@ -229,4 +229,4 @@
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Models.pdb
 /Users/HAN/C# .NET/The25th_WEB/bin/Debug/net11.0/The25th.Utility.pdb
 /Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/The25th_WEB.MvcApplicationPartsAssemblyInfo.cs
-/Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/0y7wp919ue-{0}-8exlv1hn3s-8exlv1hn3s.gz
+/Users/HAN/C# .NET/The25th_WEB/obj/Debug/net11.0/compressed/0y7wp919ue-{0}-b6yqbav2q6-b6yqbav2q6.gz
